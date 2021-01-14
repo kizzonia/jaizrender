@@ -1,0 +1,73 @@
+
+<!-- Testimonial Section -->
+<section class="testimonial-section" style="background-image: url(<%= asset_path "background/2.jpg" %>);">
+  <div class="auto-container">
+    <div class="sec-title light text-center">
+      <% if Header.exists? %>
+      <% @headers.take(1).each do |h|%>
+      <h2><%= h.feedbacks_title %></h2>
+      <p><%= h.feedbacks_sub_title %></p>
+      <% end %>
+      <% else %>
+      <h2>Put Feedback header title here</h2>
+      <div class="text">sub_title</div>
+      <% end %>
+    </div>
+
+    <!-- Testimonial Carousel -->
+    <div class="testimonial-carousel owl-carousel owl-theme">
+
+      <% if Feedback.exists?%>
+      <% @feedbacks.each do |f| %>
+      <!-- Testimonial Block -->
+      <div class="testimonial-block">
+        <div class="inner-box">
+          <div class="text">
+            <div class="inner">
+              <%= raw(f.body) %>
+            </div>
+          </div>
+          <div class="info-box">
+            <span class="icon fa fa-quote-left"></span>
+            <h5 class="name"><%= f.title %></h5>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <!-- Testimonial Block -->
+      <div class="testimonial-block">
+        <div class="inner-box">
+          <div class="text">
+            <div class="inner">
+              <p>Today we can tell you, thanks to your passion, hard work creativity, and expertise, you delivered us the most beautiful house ever! It’s been a beautiful ride, there were up’s and down’s, frustrations, delays at the same time great looks. keep touch with them.</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <span class="icon fa fa-quote-left"></span>
+            <h5 class="name">Jhon Zabrilla</h5>
+            <span class="city">Newyark City</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Block -->
+      <div class="testimonial-block">
+        <div class="inner-box">
+          <div class="text">
+            <div class="inner">
+              <p>Today we can tell you, thanks to your passion, hard work creativity, and expertise, you delivered us the most beautiful house ever! It’s been a beautiful ride, there were up’s and down’s, frustrations, delays at the same time great looks. keep touch with them.</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <span class="icon fa fa-quote-left"></span>
+            <h5 class="name">Jhon Zabrilla</h5>
+            <span class="city">Newyark City</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--End Testimonial Section -->

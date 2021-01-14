@@ -1,0 +1,125 @@
+<!--Page Title-->
+<% if Header.exists? %>
+<% @headers.take(1).each do |h| %>
+<section class="page-title" style="background-image:url(<%= h.headerimg_url.to_s %>);">
+    <div class="auto-container clearfix">
+        <h1>  Contact Us</h1>
+        <ul class="bread-crumb clearfix">
+          <li><%= link_to "Home", root_path  %></li>
+            <li>  Contact Us
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+<% else %>
+<section class="page-title" style="background-image:url(<%= asset_path "background/7.jpg"%>);">
+    <div class="auto-container clearfix">
+        <h1>  Contact Us
+</h1>
+        <ul class="bread-crumb clearfix">
+            <li><a href="#">Home</a></li>
+            <li>  Contact Us
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+
+<section class="contact-section" id="contact">
+    <div class="auto-container">
+        <div class="upper-box">
+            <h2>Write us a Message !</h2>
+        </div>
+        <div class="row clearfix">
+            <!-- Form Column -->
+            <div class="form-column col-lg-6 col-md-12 col-sm-12 order-2">
+                <div class="inner-column">
+                    <div class="contact-form">
+
+<%= render 'form', contact: @contact %>
+</div>
+</div>
+</div>
+<!-- Contact Column -->
+<div class="contact-column col-lg-6 col-md-12 col-sm-12">
+    <div class="inner-column">
+        <div class="row no-gutters">
+
+          <% if Welcome.exists? %>
+            <%  @welcomes.take(1).each do |w| %>
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-worldwide"></span>
+                    <h4>Address</h4>
+                    <p><%= w.address %></p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-phone"></span>
+                    <h4>Call Us</h4>
+                    <p><a href="#"><%= w.phone %></a></p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-email"></span>
+                    <h4>Mail Us</h4>
+                    <p><a href="mailto:s<%= w.footer %>"><%= w.footer %></a></p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-clock"></span>
+                    <h4>Time Table</h4>
+                    <p>SUN - THU: 08AM to 04PM</p>
+                    <p>Bahrain Local time - GMT +3hours</p>
+                </div>
+            </div>
+            <% end %>
+            <%else %>
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-worldwide"></span>
+                    <h4>Address</h4>
+                    <p>Breaking Street, <br>Newyork, USA</p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-phone"></span>
+                    <h4>Call Us</h4>
+                    <p><a href="#">(+92) 313 888 000</a></p>
+                    <p><a href="#">(+92) 313 999 000</a></p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-email"></span>
+                    <h4>Mail Us</h4>
+                    <p><a href="mailto:support@example.com">support@example.com</a></p>
+                    <p><a href="mailto:support@example.com">support@example.com</a></p>
+                </div>
+            </div>
+
+            <div class="contact-info-block col-lg-6 col-md-6 col-sm-12">
+                <div class="inner">
+                    <span class="icon flaticon-clock"></span>
+                    <h4>Time Table</h4>
+                    <p>Mon - Sat: 09AM to 05PM</p>
+                    <p>Sunday - Close</p>
+                </div>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,65 @@
+<% if Banner.exists? %>
+<section class="banner-section">
+    <div class="banner-carousel owl-carousel owl-theme">
+        <!-- Slide Item -->
+        <% @banners.each do |b| %>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url(<%= b.bannerimg_url.to_s %>)"></div>
+            <div class="content-box">
+                <div class="content">
+                    <div class="auto-container">
+                        <h2><%= b.title %></h2>
+                        <div class="text"><%= b.sub_title %></div>
+                        <div class="btn-box">
+                            <%= link_to new_contact_path, class: "theme-btn btn-style-two" do %>
+                            <span class="btn-title">Learn More </span><span></span><span></span><span></span><span></span>
+
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+</section>
+<% else %>
+<section class="banner-section">
+    <div class="banner-carousel owl-carousel owl-theme">
+        <!-- Slide Item -->
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url('<%= asset_paht "main-slider/1.jpg"%>')"></div>
+            <div class="content-box">
+                <div class="content">
+                    <div class="auto-container">
+                        <span class="title">Welcome To Wooder</span>
+                        <h2>Quality Wooden<br> On Your Demond</h2>
+                        <div class="text">From 1984, we have worked tirelessly to earan our reputation for <br>quality and dependability in all wooden products we offer.</div>
+                        <div class="btn-box">
+                            <a href="#" class="theme-btn btn-style-two"><span class="btn-title">Check Service</span><span></span><span></span><span></span><span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide Item -->
+        <div class="slide-item">
+          <div class="image-layer" style="background-image:url('<%= asset_paht "main-slider/2.jpg"%>')"></div>
+            <div class="content-box">
+                <div class="content">
+                    <div class="auto-container">
+                        <span class="title">Welcome To Wooder</span>
+                        <h2>We give solution to<br> need your carpenter</h2>
+                        <div class="text">From 1984, we have worked tirelessly to earan our reputation for <br>quality and dependability in all wooden products we offer.</div>
+                        <div class="btn-box">
+                            <a href="#" class="theme-btn btn-style-two"><span class="btn-title">Check Service</span><span></span><span></span><span></span><span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<% end %>

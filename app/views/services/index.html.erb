@@ -1,0 +1,28 @@
+<% if Header.exists? %>
+<% @headers.take(1).each do |h| %>
+<section class="page-title" style="background-image:url(<%= h.headerimg_url.to_s %>);">
+    <div class="auto-container clearfix">
+        <h1>  Our Services</h1>
+        <ul class="bread-crumb clearfix">
+          <li><%= link_to "Home", root_path  %></li>
+            <li>  Our Services
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+<% else %>
+<section class="page-title" style="background-image:url(<%= asset_path "background/7.jpg"%>);">
+    <div class="auto-container clearfix">
+        <h1>  Our Services
+</h1>
+        <ul class="bread-crumb clearfix">
+            <li><a href="index-2.html">Home</a></li>
+            <li>  Our Services
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+
+<%= render "shared/services" %>

@@ -1,0 +1,87 @@
+<!--Fluid Section One-->
+<section class="fluid-section-one">
+  <div class="outer-container clearfix">
+    <!--Content Column-->
+    <div class="content-column">
+      <div class="inner-column">
+        <% if Header.exists? %>
+        <% @headers.take(1).each do |h| %>
+        <div class="sec-title">
+          <h2><%= h.features_title %>?</h2>
+        </div>
+        <div class="text-box">
+          <p><%= h.features_sub_title %>
+          </p>
+        </div>
+        <% end %>
+        <% else %>
+        <div class="sec-title">
+          <h2>Why Choose Us?</h2>
+        </div>
+        <div class="text-box">
+          <p>Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.duis aute irure dolor in reprehen derit in voluptate velit esse cillum dolore eu fugiat nulla pariatur cepteur sint occaecat.</p>
+        </div>
+        <% end %>
+
+
+        <div class="row">
+          <!-- Feature Block -->
+          <% if Feature.exists? %>
+          <% @features.take(4).each do |f| %>
+          <div class="feature-block-two col-lg-6 col-md-6">
+            <div class="inner-box">
+              <span class="icon <%= f.icon %>"></span>
+              <h4><%= f.title %></h4>
+              <div class="text"><%= f.sub_title %></div>
+            </div>
+          </div>
+          <% end %>
+          <% else %>
+          <div class="feature-block-two col-lg-6 col-md-6">
+            <div class="inner-box">
+              <span class="icon flaticon-24-hours"></span>
+              <h4>Available 24/7</h4>
+              <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+            </div>
+          </div>
+
+          <!-- Feature Block -->
+          <div class="feature-block-two col-lg-6 col-md-6">
+            <div class="inner-box">
+              <span class="icon flaticon-artificial-intelligence"></span>
+              <h4>Creative ideas</h4>
+              <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+            </div>
+          </div>
+
+          <!-- Feature Block -->
+          <div class="feature-block-two col-lg-6 col-md-6">
+            <div class="inner-box">
+              <span class="icon flaticon-handshake"></span>
+              <h4>Customer Focused</h4>
+              <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+            </div>
+          </div>
+
+          <!-- Feature Block -->
+          <div class="feature-block-two col-lg-6 col-md-6">
+            <div class="inner-box">
+              <span class="icon flaticon-rocket-ship"></span>
+              <h4>Fast Delivery</h4>
+              <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+            </div>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!--Image Column-->
+    <div class="image-column" style="background-image:url(<%= asset_path "background/215.jpg" %>);">
+      <figure class="image-box"><img src="<%= asset_path "background/215.jpg" %>" alt=""></figure>
+    </div>
+  </div>
+</section>
+<!-- End Fluid Section -->

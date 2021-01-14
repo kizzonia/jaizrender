@@ -1,0 +1,134 @@
+<section class="services-section">
+  <div class="auto-container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <% if Header.exists? %>
+        <% @headers.take(1).each do |h|%>
+
+        <div class="sec-title">
+          <h2><%= h.services_title %></h2>
+          <div class="text"><%= h.services_sub_title %></div>
+        </div>
+        <% end %>
+        <% else %>
+        <div class="sec-title">
+          <h2>Services</h2>
+          <div class="text">add me at service sub_title </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="right-btn text-right">
+          <%= link_to services_path, class:"theme-btn btn-style-two" do %>
+          <span class="btn-title">All Services</span><span></span><span></span><span></span><span></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-outer">
+      <!-- Services Carousel -->
+      <div class="services-carousel owl-carousel owl-theme">
+        <!-- service Block -->
+        <% if Service.exists?%>
+        <% @services.take(6).each do |s| %>
+
+        <div class="service-block">
+          <div class="inner-box">
+            <div class="image-box">
+              <figure class="image">
+                <%= link_to s do %>
+                <%= image_tag s.serviceimg_url.to_s %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="lower-content">
+              <h4>
+                <%= link_to s.title, s %>
+
+
+              </h4>
+              <div class="text"><%= s.sub_title %>.</div>
+              <div class="btn-box">
+                <%= link_to s, class: "read-more" do %>
+                Read More <span class="fa fa-arrow-right"></span>
+                <% end %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% else %>
+          <!-- service Block -->
+          <div class="service-block">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="service-detail.html"><img src="<%= asset_path "resource/service-1.jpg"%>" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <h4><a href="service-detail.html">Furniture Remodeling</a></h4>
+                <div class="text">Professionals work with a variety of all materials, in a variety of settings–indoor and outdoor.</div>
+                <div class="btn-box"><a href="service-detail.html" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+          <!-- service Block -->
+          <div class="service-block">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="service-detail.html"><img src="<%= asset_path "resource/service-2.jpg"%>" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <h4><a href="service-detail.html">Furniture Remodeling</a></h4>
+                <div class="text">Professionals work with a variety of all materials, in a variety of settings–indoor and outdoor.</div>
+                <div class="btn-box"><a href="service-detail.html" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-block">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="service-detail.html"><img src="<%= asset_path "resource/service-2.jpg"%>" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <h4><a href="service-detail.html">Furniture Remodeling</a></h4>
+                <div class="text">Professionals work with a variety of all materials, in a variety of settings–indoor and outdoor.</div>
+                <div class="btn-box"><a href="service-detail.html" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+          <!-- service Block -->
+          <div class="service-block">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="service-detail.html"><img src="<%= asset_path "resource/service-3.jpg"%>" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <h4><a href="service-detail.html">Manufactur Furniture</a></h4>
+                <div class="text">Professionals work with a variety of all materials, in a variety of settings–indoor and outdoor.</div>
+                <div class="btn-box"><a href="service-detail.html" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- service Block -->
+          <div class="service-block">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="service-detail.html"><img src="<%= asset_path "resource/service-4.jpg"%>" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <h4><a href="service-detail.html">Hang Paintings</a></h4>
+                <div class="text">Professionals work with a variety of all materials, in a variety of settings–indoor and outdoor.</div>
+                <div class="btn-box"><a href="service-detail.html" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End service Section -->

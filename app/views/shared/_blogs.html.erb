@@ -1,0 +1,89 @@
+<!-- News Section -->
+<section class="news-section">
+  <div class="auto-container">
+    <% if Header.exists? %>
+    <% @headers.take(1).each do |h|%>
+
+    <div class="sec-title">
+      <h2><%= h.blogs_title %></h2>
+      <div class="text"><%= h.blogs_sub_title %></div>
+    </div>
+    <% end %>
+    <% else %>
+    <div class="sec-title">
+      <h2>New & Articles</h2>
+      <div class="text">add me at service sub_title </div>
+    </div>
+    <% end %>
+
+    <div class="row">
+      <!-- News Block -->
+      <% if Blog.exists? %>
+      <% @blogs.take(3).each do |b| %>
+      <div class="news-block col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="image-box">
+            <figure class="image">
+              <%= link_to b do %>
+              <%= image_tag b.blogimg_url.to_s %>
+              <% end %>
+            </figure>
+         </div>
+            <div class="lower-content">
+              <h4>
+                <%= link_to b.title, b %>
+              </h4>
+              <div class="btn-box">
+                <%= link_to b, class: "read-more" do %>
+                Read More <span class="fa fa-arrow-right"></span>
+                <% end %>
+              </div>
+              </div>
+              </div>
+            </div>
+          <% end %>
+
+          <% else %>
+
+
+          <!-- News Block -->
+          <div class="news-block col-lg-4 col-md-6 col-sm-12">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <div class="post-date"><span class="far fa-calendar"></span> Jan 02, 2020</div>
+                <ul class="post-info">
+                  <li><span class="far fa-user"></span> By Admin | </li>
+                  <li><a href="#">General Carpentry</a></li>
+                </ul>
+                <h4><a href="blog-detail.html">Home Repair and Maintain safe now in the rantain.</a></h4>
+                <div class="btn-box"><a href="#" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Block -->
+          <div class="news-block col-lg-4 col-md-6 col-sm-12">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt=""></a></figure>
+              </div>
+              <div class="lower-content">
+                <div class="post-date"><span class="far fa-calendar"></span> Jan 03, 2020</div>
+                <ul class="post-info">
+                  <li><span class="far fa-user"></span> By Admin | </li>
+                  <li><a href="#">General Carpentry</a></li>
+                </ul>
+                <h4><a href="blog-detail.html">Good furniture is now on persale in showroom in Dec.</a></h4>
+                <div class="btn-box"><a href="#" class="read-more">Read More <span class="fa fa-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+        </div>
+    </section>
+    <!--End News Section Two -->

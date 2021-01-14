@@ -1,0 +1,57 @@
+<!--Page Title-->
+<% if Header.exists? %>
+<% @headers.take(1).each do |h| %>
+<section class="page-title" style="background-image:url(<%= h.headerimg_url.to_s %>);">
+    <div class="auto-container clearfix">
+        <h1>  <%= @about.title %></h1>
+        <ul class="bread-crumb clearfix">
+          <li><%= link_to "Home", root_path  %></li>
+            <li>  <%= @about.title %>
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+<% else %>
+<section class="page-title" style="background-image:url(<%= asset_path "background/7.jpg"%>);">
+    <div class="auto-container clearfix">
+        <h1>  <%= @about.title %>
+</h1>
+        <ul class="bread-crumb clearfix">
+            <li><%= link_to "Home", root_path  %></li>
+            <li>  <%= @about.title %>
+</li>
+        </ul>
+    </div>
+</section>
+<% end %>
+
+<!-- About Us -->
+<section class="about-us">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Column -->
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+                    <div class="sec-title">
+                        <h2>About Us</h2>
+                    </div>
+                    <div class="text-box">
+                      <%= @about.sub_title %>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="video-box wow fadeIn">
+                            <figure class="image"><%= image_tag (@about.abtimg_url.to_s) %></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+              <%= raw(@about.body) %>
+
+            </div>
+        </div>
+        </section>

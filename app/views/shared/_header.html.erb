@@ -1,0 +1,322 @@
+<% if Welcome.exists? %>
+<header class="main-header">
+  <!--Header Top-->
+  <% @welcomes.each do |w| %>
+  <div class="header-top">
+    <div class="auto-container clearfix">
+      <div class="top-left">
+        <div class="text"><%= w.title %>.</div>
+      </div>
+
+      <div class="top-right">
+        <ul class="contact-info clearfix">
+          <li><span class="icon fa fa-phone-volume"></span> <a href="tel:<%= w.phone%>"><%= w.phone%></a></li>
+          <li><span class="icon fa fa-envelope"></span> <a href="mailto:<%= w.footer%>"><%= w.footer%></a></li>
+          <!--Search Box-->
+
+        </ul>
+        <ul class="social-icon-one clearfix">
+          <li><a href="<%= w.twitter%>"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="<%= w.footer%>"><i class="fab fa-google-plus-g"></i></a></li>
+          <li><a href="<%= w.ln %>"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <!-- End Header Top -->
+
+  <!--Header Lower-->
+  <div class="header-lower">
+    <div class="auto-container">
+      <div class="main-box clearfix">
+        <div class="pull-left logo-outer">
+          <% @welcomes.take(1).each do |w| %>
+          <div class="logo">
+            <%= link_to root_path do %>
+            <%= image_tag (w.logoimg_url.to_s) %>
+            <% end %>
+
+          </div>
+          <% end %>
+        </div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+          <!--Mobile Navigation Toggler-->
+          <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+
+          <!-- Main Menu -->
+          <nav class="main-menu navbar-expand-md navbar-light">
+            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+              <ul class="navigation clearfix">
+                <li class="current ">
+                    <%= link_to root_path do %>
+                    Home
+                    <% end %>
+
+                </li>
+                <li class="dropdown"><a href="#">Knowledge Base</a>
+                  <ul>
+                    <% @abouts.each do |a| %>
+                    <li>
+                      <%= link_to a.title, a %>
+                    </li>
+                    <% end %>
+                    <li >
+                      <%= link_to "FAQ's", faqs_path %>
+
+                    </li>
+                    <li >
+                      <%= link_to "Board Of Directors", boards_path %>
+
+                    </li>
+                    <li >
+                      <%= link_to "Management Team", teams_path %>
+
+                    </li>
+
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#">Services</a>
+                  <ul>
+                    <% @services.each do |a| %>
+                    <li>
+                      <%= link_to a.title, a %>
+                    </li>
+                    <% end %>
+                  </ul>
+                </li>
+
+                <li><%= link_to "News Updates", blogs_path %></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Main Menu End-->
+
+          <div class="outer-box">
+            <!-- Shoppping Car -->
+
+            <!-- Btn Box -->
+            <div class="btn-box">
+              <%= link_to  new_contact_path, class: "theme-btn btn-style-one" do %>
+           <span class="btn-title">Appointment</span> <span></span><span></span><span></span><span></span>
+           <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Header Lower-->
+<% @welcomes.take(1).each do |w| %>
+  <!-- Sticky Header  -->
+  <div class="sticky-header">
+    <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo pull-left">
+        <%= link_to root_path do %>
+        <%= image_tag w.logoimg_url.to_s %>
+        <% end %>
+            </div>
+      <!--Right Col-->
+      <div class="nav-outer pull-right">
+        <!--Mobile Navigation Toggler-->
+        <div class="mobile-nav-toggler"><span><i class="fas fa-ellipsis-v"></i></span></div>
+
+        <!-- Main Menu -->
+        <nav class="main-menu">
+          <div class="navbar-collapse show collapse clearfix">
+            <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+          </div>
+        </nav><!-- Main Menu End-->
+      </div>
+    </div>
+  </div><!-- End Sticky Menu -->
+
+
+  <!-- Mobile Menu  -->
+  <div class="mobile-menu">
+    <div class="menu-backdrop"></div>
+    <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+
+    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+    <nav class="menu-box">
+      <div class="nav-logo">
+        <%= link_to root_path do %>
+        <%= image_tag w.logoimg_url.to_s %>
+        <% end %>
+            </div>
+
+      <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+    </nav>
+  </div><!-- End Mobile Menu -->
+  <% end %>
+</header>
+
+<% else %>
+<header class="main-header">
+  <!--Header Top-->
+  <div class="header-top">
+    <div class="auto-container clearfix">
+      <div class="top-left">
+        <div class="text">Welcome to Wooder Interior decoration Solution.</div>
+      </div>
+
+      <div class="top-right">
+        <ul class="contact-info clearfix">
+          <li><span class="icon fa fa-phone-volume"></span> <a href="tel:590780123">590 780 123</a></li>
+          <li><span class="icon fa fa-envelope"></span> <a href="mailto:demo@wooder.com">demo@wooder.com</a></li>
+          <!--Search Box-->
+
+        </ul>
+        <ul class="social-icon-one clearfix">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+          <li><a href="#"><i class="fab fa-skype"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Header Top -->
+
+  <!--Header Lower-->
+  <div class="header-lower">
+    <div class="auto-container">
+      <div class="main-box clearfix">
+        <div class="pull-left logo-outer">
+          <div class="logo"><a href="index-2.html"><img src="<%= asset_path "logo.png" %>" alt="" title=""></a></div>
+        </div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+          <!--Mobile Navigation Toggler-->
+          <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+
+          <!-- Main Menu -->
+          <nav class="main-menu navbar-expand-md navbar-light">
+            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+              <ul class="navigation clearfix">
+                <li class="current dropdown"><a href="index-2.html">Home</a>
+                  <ul>
+                    <li class="dropdown"><a href="#">Header Styles</a>
+                      <ul>
+                        <li><a href="index-2.html">Header Style One</a></li>
+                        <li><a href="index-3.html">Header Style Two</a></li>
+                        <li><a href="index-4.html">Header Style Three</a></li>
+                        <li><a href="index-5.html">Header Style Four</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="index-2.html">Home Style One</a></li>
+                    <li><a href="index-3.html">Home Style Two</a></li>
+                    <li><a href="index-4.html">Home Style Three</a></li>
+                    <li><a href="index-5.html">Home One Pager</a></li>
+                    <li><a href="index-6.html">Home Video Banner</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="about.html">About</a>
+                  <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faqs.html">FAQ's</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="services.html">Services</a>
+                  <ul>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="service-detail.html">General Carpentry</a></li>
+                    <li><a href="service-detail.html">Furniture Remodeling</a></li>
+                    <li><a href="service-detail.html">Hang Paintings</a></li>
+                    <li><a href="service-detail.html">Manufactur Furniture</a></li>
+                    <li><a href="service-detail.html">Commercial work</a></li>
+                    <li><a href="service-detail.html">Furniture Design</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="projects.html">Projects</a>
+                  <ul>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="project-detail.html">Project Detail</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="blog.html">Blog</a>
+                  <ul>
+                    <li><a href="blog.html">Blog with Sidebar</a></li>
+                    <li><a href="blog-grid.html">Blog Grid View</a></li>
+                    <li><a href="blog-detail.html">Blog Detail</a></li>
+                    <li><a href="error-page.html">404 Error</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#">Shop</a>
+                  <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="shop-single.html">Product Details</a></li>
+                    <li><a href="shopping-cart.html">Cart Page</a></li>
+                    <li><a href="checkout.html">Checkout Page</a></li>
+                    <li><a href="login.html">Registration Page</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Main Menu End-->
+
+          <div class="outer-box">
+            <!-- Shoppping Car -->
+            <div class="cart-btn">
+              <a href="#"><i class="icon flaticon-shopping-bag"></i> <span class="count">2</span></a>
+            </div>
+
+            <!-- Btn Box -->
+            <div class="btn-box">
+              <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span> <span></span><span></span><span></span><span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Header Lower-->
+
+  <!-- Sticky Header  -->
+  <div class="sticky-header">
+    <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo pull-left">
+        <a href="index-2.html" title=""><img src="<%= asset_path "logo.png" %>" alt="" title=""></a>
+      </div>
+      <!--Right Col-->
+      <div class="nav-outer pull-right">
+        <!--Mobile Navigation Toggler-->
+        <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+
+        <!-- Main Menu -->
+        <nav class="main-menu">
+          <div class="navbar-collapse show collapse clearfix">
+            <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+          </div>
+        </nav><!-- Main Menu End-->
+      </div>
+    </div>
+  </div><!-- End Sticky Menu -->
+
+
+  <!-- Mobile Menu  -->
+  <div class="mobile-menu">
+    <div class="menu-backdrop"></div>
+    <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+
+    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+    <nav class="menu-box">
+      <div class="nav-logo"><a href="index-2.html"><img src="<%= asset_path "logo.png" %>" alt="" title=""></a></div>
+
+      <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+    </nav>
+  </div><!-- End Mobile Menu -->
+</header>
+
+<% end %>

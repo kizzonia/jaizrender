@@ -1,0 +1,135 @@
+
+<footer class="main-footer" style="background-image: url(<%= asset_path "background/12.png" %>);">
+  <div class="auto-container">
+    <!--Widgets Section-->
+    <div class="widgets-section">
+      <div class="row">
+        <!--Footer Column-->
+        <div class="footer-column col-xl-4 col-lg-5 col-md-12 col-sm-12">
+          <% if Welcome.exists? %>
+          <% @welcomes.each do |w| %>
+          <div class="footer-widget about-widget">
+            <div class="footer-logo">
+              <figure class="image">
+                <%= link_to w do %>
+                <%= image_tag w.logoimg_url.to_s %>
+                <% end %>
+              </figure>                      </div>
+              <div class="widget-content">
+                <div class="text"><%= w.desc %></div>
+                <ul class="contact-list">
+                  <li><span class="fa fa-map-marker"></span> <%= w.address %>.</li>
+                  <li><span class="fa fa-envelope"></span> <a href="mailto:<%= w.footer %>"><%= w.footer %></a></li>
+                  <li><span class="fa fa-phone-volume"></span><a href="tel:<%= w.phone %>"><%= w.phone %></a></li>
+                </ul>
+              </div>
+            </div>
+            <% end %>
+            <% else %>
+
+            <div class="footer-widget about-widget">
+              <div class="footer-logo">
+                <figure class="image"><a href="index-2.html"><img src="<%= asset_path "logo-2.png" %>" alt=""></a></figure>
+              </div>
+              <div class="widget-content">
+                <div class="text">We have over 10 years of experience, We take pride in delivering Intelligent Designs for clients all over the World.</div>
+                <ul class="contact-list">
+                  <li><span class="fa fa-map-marker"></span> 256 Interior the good, New York.</li>
+                  <li><span class="fa fa-envelope"></span> <a href="mailto:Supportyou@demo.com">Support@demo.com</a></li>
+                  <li><span class="fa fa-phone-volume"></span><a href="tel:1-800-985-357">1-800-985-357</a></li>
+                </ul>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+
+          <!--Footer Column-->
+          <div class="footer-column col-xl-5 col-lg-7 col-md-12 col-sm-12">
+            <!--Footer Column-->
+            <div class="footer-widget links-widget">
+              <div class="row">
+                <div class="col-lg-7 col-md-6">
+                  <h2 class="widget-title">Services</h2>
+                  <!--Footer Column-->
+                  <div class="widget-content">
+                    <ul class="list-style-two">
+                      <% if Service.exists? %>
+                      <% @services.each do |a| %>
+                      <li>
+                        <%= link_to a.title, a %>
+                      </li>
+                      <% end %>
+                      <% else %>
+                      <li><a href="services.html">All Services</a></li>
+                      <li><a href="service-detail.html">General Carpentry</a></li>
+                      <li><a href="service-detail.html">Furniture Remod..</a></li>
+                      <li><a href="service-detail.html">Hang Paintings</a></li>
+                      <li><a href="service-detail.html">Manufactur Furni..</a></li>
+                      <li><a href="service-detail.html">Commercial work</a></li>
+                      <li><a href="service-detail.html">Furniture Design</a></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6">
+                  <h3 class="widget-title">Useful Links</h3>
+                  <!--Footer Column-->
+                  <div class="widget-content">
+                    <ul class="list-style-two">
+                      <% if About.exists? %>
+                      <% @abouts.each do |a| %>
+                      <li>
+                        <%= link_to a.title, a %>
+                      </li>
+                      <% end %>
+                      <li><%= link_to "News Updates", blogs_path %></li>
+                      <li><%= link_to "Faq", faqs_path %></li>
+
+                      <% else %>
+                      <li><a href="services.html">About Us</a></li>
+                      <li><a href="service-detail.html">Team</a></li>
+                      <li><a href="service-detail.html">Pricing</a></li>
+                      <li><a href="service-detail.html">FAQ's</a></li>
+                      <li><a href="service-detail.html">Portfolio</a></li>
+                      <li><a href="service-detail.html">Subscribe</a></li>
+                      <li><a href="service-detail.html">Contact Us</a></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Footer Column-->
+          <div class="footer-column col-xl-3 col-lg-6 col-md-12 col-sm-12">
+            <div class="footer-widget subscribe-widget">
+              <h2 class="widget-title">Socials</h2>
+              <div class="widget-content">
+
+
+                <ul class="social-links">
+                  <% @welcomes.each do |w| %>
+
+                  <li><a href="<%= w.twitter%>"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="<%= w.footer%>"><i class="fab fa-google-plus-g"></i></a></li>
+                  <li><a href="<%= w.ln %>"><i class="fab fa-linkedin-in"></i></a></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer Bottom-->
+    <div class="footer-bottom">
+      <div class="auto-container">
+        <div class="copyright-text">Copyrights 2019. All Rights are Reserved by <a href="#">JAIZ GLOBAL LLC</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Main Footer -->
