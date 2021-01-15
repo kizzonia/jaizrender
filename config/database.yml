@@ -80,7 +80,9 @@ development:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: backupjaiz_production
+  host: app-1e369967-bf3a-4b36-9c68-50ab952d7931-do-user-8566639-0.b.db.ondigitalocean.com
+  port: 25060
   username: backupjaiz
-  password: <%= ENV['BACKUPJAIZ_DATABASE_PASSWORD'] %>
+  password: ilirtiwujj88z9uy
+  database: backupjaiz
+  sslmode: require
