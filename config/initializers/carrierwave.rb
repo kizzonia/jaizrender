@@ -8,12 +8,15 @@ CarrierWave.configure do |config|
 
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
-    :aws_access_key_id      => 'AKIAJ5UFI6KSULXTSPGA',                        # required
-    :aws_secret_access_key  => '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',                     # required
-    :endpoint => 'https://nyc3.digitaloceanspaces.com',
-    :region => 'nyc3'
+    :aws_access_key_id      => ENV['DO_ACCESS_KEY_ID'],                        # required
+    :aws_secret_access_key  => ENV['DO_SECRET_ACCESS_KEY'],                     # required
+
+    :endpoint => 'nyc3.digitaloceanspaces.com',
+    :region => 'nyc3',
+    :host => ENV['DO_HOST']
   }
-  config.fog_directory  = 'jaiz'                             # required
+  config.fog_directory  = ENV['DO_BUCKET_NAME']                            # required
+  config.asset_host =  ENV['DO_HOST']
   config.fog_public     = true                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
