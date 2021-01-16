@@ -10,7 +10,8 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',                        # required
     :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],                        # required
     :aws_secret_access_key  => ENV['AWS_SECRET_ACCESS_KEY'],                     # required
-    :region                 => 'us-east-2',                  # optional, defaults to 'us-east-1'
+    :endpoint => 'https://nyc3.digitaloceanspaces.com',
+    :region => 'nyc3'
   }
   config.fog_directory  = ENV['S3_BUCKET_NAME']                             # required
   config.fog_public     = true                                   # optional, defaults to true
