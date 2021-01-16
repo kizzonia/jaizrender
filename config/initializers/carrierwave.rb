@@ -13,10 +13,10 @@ CarrierWave.configure do |config|
 
     :endpoint => 'nyc3.digitaloceanspaces.com',
     :region => 'nyc3',
-    :host => ENV['DO_HOST']
+    :host => 'https://nyc3.digitaloceanspaces.com'
   }
   config.fog_directory  = ENV['DO_BUCKET_NAME']                            # required
-  config.asset_host =  ENV['DO_HOST']
+  config.asset_host =  "https://jaiz.nyc3.digitaloceanspaces.com"
   config.fog_public     = true                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
