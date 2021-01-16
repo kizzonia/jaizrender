@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
     :endpoint => 'https://nyc3.digitaloceanspaces.com',
     :region => 'nyc3'
   }
-  config.fog_directory  = jaiz                             # required
+  config.fog_directory  = 'jaiz'                             # required
   config.fog_public     = true                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
