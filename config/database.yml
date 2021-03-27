@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: jiaz_development
+  database: kizonia_development
   pool: 5
   username: postgres
   password: kizzonia1
@@ -58,6 +58,12 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: kizonia_test
+  pool: 5
+  username: postgres
+  password: kizzonia1
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,9 +86,7 @@ development:
 #
 production:
   <<: *default
-  host: app-1e369967-bf3a-4b36-9c68-50ab952d7931-do-user-8566639-0.b.db.ondigitalocean.com
-  port: 25060
-  username: backupjaiz
-  password: ilirtiwujj88z9uy
-  database: backupjaiz
-  sslmode: require
+url: <%= ENV['DATABASE_URL'] %>
+database: jaizglobal_production
+username: jaizglobal
+password: <%= ENV['JAIZGLOBAL_DATABASE_PASSWORD'] %>
