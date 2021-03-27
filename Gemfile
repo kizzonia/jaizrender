@@ -10,8 +10,8 @@ ruby '2.7.2'
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'carrierwave'
-gem "mini_magick"
+gem 'carrierwave', '~> 2.1'
+gem 'mimemagic', '~> 0.3.5'
 gem "fog-aws"
 gem 'duktape'
 #gem 'active_admin_flat_skin'
