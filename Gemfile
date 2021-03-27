@@ -35,7 +35,7 @@ gem 'sitemap_generator'
 gem 'social-share-button', '~> 0.1.6'
 gem 'activeadmin', github: 'activeadmin'
 gem 'toastr-rails'
-gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+gem 'bcrypt',  :require => "bcrypt"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
