@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', github: 'plataformatec/devise'
-gem 'ckeditor', '4.2.4'
+gem 'ckeditor', '~> 4.3'
 gem 'httparty', '~> 0.13.7'
 gem "simple_form"
 gem 'friendly_id'
