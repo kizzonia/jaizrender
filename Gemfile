@@ -39,7 +39,6 @@ gem 'kaminari'
 #gem 'mini_racer', platforms: :ruby
 gem 'devise'
 gem 'ckeditor_rails_6'
-gem 'httparty'
 gem "simple_form"
 gem 'friendly_id'
 gem 'jquery-rails'
