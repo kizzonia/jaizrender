@@ -1,5 +1,5 @@
 databases:
-  - name: jaizglobal
+  - name: postgres
     databaseName: jaizglobal
     user: jaizglobal
     ipAllowList: []
