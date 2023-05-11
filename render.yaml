@@ -21,6 +21,11 @@ services:
         sync: false
         - key: AWS_REGION # Imported from Heroku app
           value: us-east-2
+        - key: AWS_ACCESS_KEY_ID
+           value: <%= ENV['AWS_ACCESS_KEY_ID']%> # Imported from Heroku app
+        - key: AWS_SECRET_ACCESS_KEY
+          value: <%= ENV['AWS_SECRET_ACCESS_KEY']
+
         - key: LANG # Imported from Heroku app
           value: en_US.UTF-8
         - key: RACK_ENV # Imported from Heroku app
