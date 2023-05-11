@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: kizonia_development
+  database: jaiz_development
   pool: 5
   username: postgres
   password: kizzonia1
@@ -83,10 +83,9 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
-url: <%= ENV['DATABASE_URL'] %>
-database: jaizglobal_production
-username: jaizglobal
-password: <%= ENV['JAIZGLOBAL_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: jaizglobal_production
+  username: jaizglobal
+  password: <%= ENV['JAIZGLOBAL_DATABASE_PASSWORD'] %>

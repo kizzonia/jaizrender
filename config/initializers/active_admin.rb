@@ -6,7 +6,6 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Jaiz"
   #
-  config.register_javascript 'ckeditor/init.js'
 
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.

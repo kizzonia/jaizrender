@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :teams
-  mount Ckeditor::Engine => '/ckeditor'
   resources :welcomes
   resources :sections
   resources :feedbacks
@@ -18,5 +17,5 @@ Rails.application.routes.draw do
 
 
   root "welcomes#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
