@@ -19,7 +19,7 @@ ActiveAdmin.register Board do
       f.input :title, placeholder: "work title"
       f.input :boardimg, :as => :file
       f.input :name, placeholder: "Board Member name"
-      f.input :body, as: :ckeditor
+      f.input :body, as: :quill_editor
     end
     f.actions
   end

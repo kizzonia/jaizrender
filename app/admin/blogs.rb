@@ -18,9 +18,9 @@ ActiveAdmin.register Blog do
     f.inputs do
       f.input :blogimg, :as => :file
       f.input :title
-      
+
       f.input :sub_title, placeholder: "description"
-      f.input :body,  as: :ckeditor
+      f.input :body, as: :quill_editor
     end
     f.actions
   end

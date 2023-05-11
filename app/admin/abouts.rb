@@ -20,7 +20,7 @@ ActiveAdmin.register About do
       f.input :icon
       f.input :abtimg, as: :file
       f.input :sub_title, placeholder: "description"
-      f.input :body,  as: :ckeditor
+      f.input :body,  as: :quill_editor
     end
     f.actions
   end

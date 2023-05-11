@@ -21,7 +21,7 @@ ActiveAdmin.register Service do
         f.input :icon, placeholder: "goto feather.com for icons important"
         f.input :serviceimg, :as => :file
         f.input :sub_title, placeholder: "description"
-        f.input :body, as: :ckeditor
+        f.input :body, as: :quill_editor
       end
       f.actions
     end
