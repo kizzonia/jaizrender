@@ -11,7 +11,7 @@ services:
     name: jaizglobal
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -20,8 +20,8 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
 
-    -type: redis
-     name: redis
-     ipAllowList: []
-     plan: free
-     maxmemoryPolicy: noeviction
+    # -type: redis
+    #  name: redis
+    #  ipAllowList: []
+    #  plan: free
+    #  maxmemoryPolicy: noeviction
